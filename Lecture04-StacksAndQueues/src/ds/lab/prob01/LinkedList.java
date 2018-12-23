@@ -1,4 +1,5 @@
 package ds.lab.prob01;
+
 import java.util.Iterator;
 
 public class LinkedList<E> implements Iterable<E> {
@@ -131,13 +132,14 @@ public class LinkedList<E> implements Iterable<E> {
 
 			@Override
 			public boolean hasNext() {
-				return currentNode != null && currentNode.getNext() != null;
+				return this.currentNode != null;
 			}
 
 			@Override
 			public E next() {
+				E result = this.currentNode.getValue();
 				this.currentNode = this.currentNode.getNext();
-				return currentNode.getValue();
+				return result;
 			}
 		};
     }
